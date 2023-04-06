@@ -47,27 +47,27 @@ class MainActivity : AppCompatActivity() {
     try {
 
 
-            when(formatt){
+            when{
 
-                in 1.0 .. 18.50-> {
+                formatt <  18.50-> {
                     var img=findViewById<ImageView>(R.id.imageView)
                     var r=resources.getDrawable(R.mipmap.yellow)
                     cvResult.setText(formatt.toString()+" kg/m2"+"  Underweight"+img.setImageDrawable(r))
                     Toast.makeText(applicationContext,"Normal",Toast.LENGTH_SHORT).show()
                 }
-               in 18.50..24.9-> {
+               formatt in 18.50..24.9-> {
                     var img=findViewById<ImageView>(R.id.imageView)
                     var r=resources.getDrawable(R.mipmap.green)
                     cvResult.setText(formatt.toString()+" kg/m2"+"  Healthy"+img.setImageDrawable(r))
                     Toast.makeText(applicationContext,"Normal",Toast.LENGTH_SHORT).show()
                 }
-                in 25.00..29.99->{
+                formatt in  25.00..29.99->{
                     var img=findViewById<ImageView>(R.id.imageView)
                     var r=resources.getDrawable(R.mipmap.orang)
                     cvResult.setText(formatt.toString()+" kg/m2"+"  Overweight"+img.setImageDrawable(r))
                     Toast.makeText(applicationContext,"Overweight",Toast.LENGTH_SHORT).show()
                 }
-                in 29.99 .. 1000.00 -> {
+                formatt in 29.99 .. 1000.00 -> {
                     var img=findViewById<ImageView>(R.id.imageView)
                     var r=resources.getDrawable(R.mipmap.red)
                     cvResult.setText(formatt.toString()+" kg/m2"+"  Obese"+img.setImageDrawable(r))
